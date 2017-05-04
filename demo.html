@@ -9,20 +9,22 @@
 
 		<style type="text/css">
 			[class*="column"] > span {
-				background-color: #eee;
+				background-color: #ddd;
 				display: block;
 				text-align: center;
 			}
 
 			.example {
-				background-color: #f9f9f9;
+				background-color: #f5f5f5;
 			}
 		</style>
 	</head>
 
 	<body>
 		<div class="row columns--center">
-			<div class="column-8">
+			<div class="column column--medium-8">
+				<h1>Demo</h1>
+
 				<h2>Columns</h2>
 
 				<div class="example">
@@ -82,13 +84,13 @@
 
 				<div class="example">
 					<div class="row">
-						<div class="column-4">
+						<div class="column">
 							<span>4</span>
 						</div>
-						<div class="column-4">
+						<div class="column">
 							<span>4</span>
 						</div>
-						<div class="column-4">
+						<div class="column">
 							<span>4</span>
 						</div>
 					</div>
@@ -107,7 +109,7 @@
 
 				<div class="example">
 					<div class="row">
-						<div class="column-12">
+						<div class="column">
 							<span>12</span>
 						</div>
 					</div>
@@ -204,12 +206,26 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="example">
+					<div class="row" style="height: 100px;">
+						<div class="column-4 column--top">
+							<span>4</span>
+						</div>
+						<div class="column-4 column--middle">
+							<span>4</span>
+						</div>
+						<div class="column-4 column--bottom">
+							<span>4</span>
+						</div>
+					</div>
+				</div>
 				
 				<h2>Offsets</h2>
 
 				<div class="example">
 					<div class="row">
-						<div class="column-7 column-offset-2">
+						<div class="column-7 column--offset-3">
 							<span>7</span>
 						</div>
 					</div>
@@ -217,8 +233,48 @@
 
 				<div class="example">
 					<div class="row">
-						<div class="column-1 column-offset-11">
-							<span>1</span>
+						<div class="column-5">
+							<span>5</span>
+						</div>
+						<div class="column-3 column--offset-3">
+							<span>3</span>
+						</div>
+					</div>
+				</div>
+				
+				<h2>Responsive classes</h2>
+
+				<div class="example">
+					<div class="row">
+						<div class="column--small-6 column--medium-8">
+							<span>8</span>
+						</div>
+						<div class="column--small-6 column--medium-4">
+							<span>4</span>
+						</div>
+					</div>
+				</div>
+
+				<div class="example">
+					<div class="row columns--between">
+						<div class="column--small-5 column--medium-4">
+							<span>4</span>
+						</div>
+						<div class="column--small-5 column--medium-4">
+							<span>4</span>
+						</div>
+					</div>
+				</div>
+				
+				<h2>Collapse columns</h2>
+
+				<div class="example">
+					<div class="row columns--collapse">
+						<div class="column--small-8">
+							<span>8</span>
+						</div>
+						<div class="column--small-4">
+							<span>4</span>
 						</div>
 					</div>
 				</div>

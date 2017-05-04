@@ -4,6 +4,11 @@ $grid-columns-number: 12;
 $grid-column-gutter: 15px;
 $grid-row-bottom-space: 15px;
 
+$min-width-medium-screen: 640px;
+$min-width-large-screen: 1024px;
+
+/* Base
+ * ========================================================================== */
 * {
 	box-sizing: border-box;
 }
@@ -19,13 +24,25 @@ $grid-row-bottom-space: 15px;
 	}
 }
 
-.column {
+@mixin column {
 	flex-basis: 0;
 	flex-grow: 1;
 	max-width: 100%;
+	width: 100%;
+}
 
+@mixin gutter {
 	padding-left: $grid-column-gutter;
 	padding-right: $grid-column-gutter;
+}
+
+%column {
+	@include column;
+	@include gutter;
+}
+
+.column {
+	@extend %column;
 }
 
 /* Horizontal modifiers
@@ -64,11 +81,23 @@ $grid-row-bottom-space: 15px;
 	align-items: flex-end;
 }
 
+.column--top {
+	align-self: flex-start;
+}
+
+.column--middle {
+	align-self: center;
+}
+
+.column--bottom {
+	align-self: flex-end;
+}
+
 /* Columns
  * ========================================================================== */
 @for $i from 1 through $grid-columns-number {
 	.column-#{$i} {
-		@extend .column;
+		@extend %column;
 
 		$column-width: percentage($i / $grid-columns-number);
 		flex-basis: $column-width;
@@ -79,7 +108,62 @@ $grid-row-bottom-space: 15px;
 /* Offsets
  * ========================================================================== */
 @for $i from 1 through ($grid-columns-number - 1) {
-	.column-offset-#{$i} {
+	.column--offset-#{$i} {
 		margin-left: percentage($i / $grid-columns-number);
+	}
+}
+
+/* Responsive classes
+ * ========================================================================== */
+@media (min-width: 0) {
+	@for $i from 1 through $grid-columns-number {
+		.column--small-#{$i} {
+			@include column;
+			@include gutter;
+
+			$column-width: percentage($i / $grid-columns-number);
+			flex-basis: $column-width;
+			max-width: $column-width;
+		}
+	}
+}
+
+@media (min-width: $min-width-medium-screen) {
+	@for $i from 1 through $grid-columns-number {
+		.column--medium-#{$i} {
+			@include column;
+			@include gutter;
+
+			$column-width: percentage($i / $grid-columns-number);
+			flex-basis: $column-width;
+			max-width: $column-width;
+		}
+	}
+}
+
+@media (min-width: $min-width-large-screen) {
+	@for $i from 1 through $grid-columns-number {
+		.column--large-#{$i} {
+			@include column;
+			@include gutter;
+
+			$column-width: percentage($i / $grid-columns-number);
+			flex-basis: $column-width;
+			max-width: $column-width;
+		}
+	}
+}
+
+/* Collapse columns
+ * ========================================================================== */
+.columns--collapse {
+	&.row {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	[class^="column"] {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
