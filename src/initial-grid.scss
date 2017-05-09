@@ -47,49 +47,49 @@ $min-width-large-screen: 1024px;
 
 /* Horizontal modifiers
  * ========================================================================== */
-.columns--left {
+.columns-left {
 	justify-content: flex-start;
 }
 
-.columns--center {
+.columns-center {
 	justify-content: center;
 }
 
-.columns--right {
+.columns-right {
 	justify-content: flex-end;
 }
 
-.columns--between {
+.columns-between {
 	justify-content: space-between;
 }
 
-.columns--around {
+.columns-around {
 	justify-content: space-around;
 }
 
 /* Vertical modifiers
  * ========================================================================== */
-.columns--top {
+.columns-top {
 	align-items: flex-start;
 }
 
-.columns--middle {
+.columns-middle {
 	align-items: center;
 }
 
-.columns--bottom {
+.columns-bottom {
 	align-items: flex-end;
 }
 
-.column--top {
+.column-top {
 	align-self: flex-start;
 }
 
-.column--middle {
+.column-middle {
 	align-self: center;
 }
 
-.column--bottom {
+.column-bottom {
 	align-self: flex-end;
 }
 
@@ -108,7 +108,7 @@ $min-width-large-screen: 1024px;
 /* Offsets
  * ========================================================================== */
 @for $i from 1 through ($grid-columns-number - 1) {
-	.column--offset-#{$i} {
+	.column-offset-#{$i} {
 		margin-left: percentage($i / $grid-columns-number);
 	}
 }
@@ -117,7 +117,7 @@ $min-width-large-screen: 1024px;
  * ========================================================================== */
 @media (min-width: 0) {
 	@for $i from 1 through $grid-columns-number {
-		.column--small-#{$i} {
+		.column-small-#{$i} {
 			@include column;
 			@include gutter;
 
@@ -130,7 +130,7 @@ $min-width-large-screen: 1024px;
 
 @media (min-width: $min-width-medium-screen) {
 	@for $i from 1 through $grid-columns-number {
-		.column--medium-#{$i} {
+		.column-medium-#{$i} {
 			@include column;
 			@include gutter;
 
@@ -143,7 +143,7 @@ $min-width-large-screen: 1024px;
 
 @media (min-width: $min-width-large-screen) {
 	@for $i from 1 through $grid-columns-number {
-		.column--large-#{$i} {
+		.column-large-#{$i} {
 			@include column;
 			@include gutter;
 
@@ -156,7 +156,7 @@ $min-width-large-screen: 1024px;
 
 /* Collapse columns
  * ========================================================================== */
-.columns--collapse {
+.columns-collapse {
 	&.row {
 		margin-left: 0;
 		margin-right: 0;
