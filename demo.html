@@ -5,7 +5,7 @@
 
 		<title>Demo - Initial Grid</title>
 
-		<link rel="stylesheet" type="text/css" href="src/initial-grid.css">
+		<link rel="stylesheet" type="text/css" href="dist/initial-grid.css">
 
 		<style type="text/css">
 			[class*="column"] > span {
@@ -16,6 +16,38 @@
 
 			.example {
 				background-color: #f5f5f5;
+			}
+
+			@media (min-width: 0) {
+				.example_responsive-1 .row [class^="column-"] span:after {
+					content: '6';
+				}
+
+				.example_responsive-2 .row [class^="column-"] span:after {
+					content: '5';
+				}
+			}
+
+			@media (min-width: 640px) {
+				.example_responsive-1 .row [class^="column-"]:first-child span:after {
+					content: '8';
+				}
+				.example_responsive-1 .row [class^="column-"]:last-child span:after {
+					content: '4';
+				}
+
+				.example_responsive-2 .row [class^="column-"] span:after {
+					content: '4';
+				}
+			}
+
+			@media (min-width: 1024px) {
+				.example_responsive-1 .row [class^="column-"]:first-child span:after {
+					content: '10';
+				}
+				.example_responsive-1 .row [class^="column-"]:last-child span:after {
+					content: '2';
+				}
 			}
 		</style>
 	</head>
@@ -244,24 +276,24 @@
 				
 				<h2>Responsive classes</h2>
 
-				<div class="example">
+				<div class="example example_responsive-1">
 					<div class="row">
-						<div class="column-small-6 column-medium-8">
-							<span>8</span>
+						<div class="column-small-6 column-medium-8 column-large-10">
+							<span></span>
 						</div>
-						<div class="column-small-6 column-medium-4">
-							<span>4</span>
+						<div class="column-small-6 column-medium-4 column-large-2">
+							<span></span>
 						</div>
 					</div>
 				</div>
 
-				<div class="example">
+				<div class="example example_responsive-2">
 					<div class="row columns-between">
 						<div class="column-small-5 column-medium-4">
-							<span>4</span>
+							<span></span>
 						</div>
 						<div class="column-small-5 column-medium-4">
-							<span>4</span>
+							<span></span>
 						</div>
 					</div>
 				</div>
