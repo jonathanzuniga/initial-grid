@@ -1,10 +1,18 @@
-/* Variables
- * ========================================================================== */
+// Variables
+// ==========================================================================
+// Número de columnas.
 $grid-columns-number: 12;
+
+// Margen del lado izquierdo y derecho de cada columna.
 $grid-column-gutter: 15px;
+
+// Espacio inferior de cada renglón.
 $grid-row-bottom-space: 15px;
 
+// El ancho mínimo para una pantalla de tamaño mediano.
 $min-width-medium-screen: 640px;
+
+// El ancho mínimo para una pantalla de tamaño grande.
 $min-width-large-screen: 1024px;
 
 /* Base
@@ -41,7 +49,10 @@ $min-width-large-screen: 1024px;
 	@include gutter;
 }
 
-.column {
+.column,
+[class*="column-small-"],
+[class*="column-medium-"],
+[class*="column-large-"] {
 	@extend %column;
 }
 
@@ -118,9 +129,6 @@ $min-width-large-screen: 1024px;
 @media (min-width: 0) {
 	@for $i from 1 through $grid-columns-number {
 		.column-small-#{$i} {
-			@include column;
-			@include gutter;
-
 			$column-width: percentage($i / $grid-columns-number);
 			flex-basis: $column-width;
 			max-width: $column-width;
@@ -131,9 +139,6 @@ $min-width-large-screen: 1024px;
 @media (min-width: $min-width-medium-screen) {
 	@for $i from 1 through $grid-columns-number {
 		.column-medium-#{$i} {
-			@include column;
-			@include gutter;
-
 			$column-width: percentage($i / $grid-columns-number);
 			flex-basis: $column-width;
 			max-width: $column-width;
@@ -144,9 +149,6 @@ $min-width-large-screen: 1024px;
 @media (min-width: $min-width-large-screen) {
 	@for $i from 1 through $grid-columns-number {
 		.column-large-#{$i} {
-			@include column;
-			@include gutter;
-
 			$column-width: percentage($i / $grid-columns-number);
 			flex-basis: $column-width;
 			max-width: $column-width;
