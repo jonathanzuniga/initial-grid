@@ -25,60 +25,12 @@
 
 ### Horizontal modifiers
 
-Alinear las columnas a la izquierda:
-
-```html
-<div class="row columns-left">
-	<div class="column-3">
-		<span>3</span>
-	</div>
-</div>
-```
-
-Alinear las columnas al centro:
-
-```html
-<div class="row columns-center">
-	<div class="column-5">
-		<span>5</span>
-	</div>
-</div>
-```
-
-Alinear las columnas a la derecha:
-
-```html
-<div class="row columns-right">
-	<div class="column-3">
-		<span>3</span>
-	</div>
-</div>
-```
-
-Agregar espacio entre las columnas:
-
-```html
-<div class="row columns-between">
-	<div class="column-2">
-		<span>2</span>
-	</div>
-	<div class="column-2">
-		<span>2</span>
-	</div>
-</div>
-```
-
-Agregar espacio alrededor de las columnas:
-
-```html
-<div class="row columns-around">
-	<div class="column-5">
-		<span>5</span>
-	</div>
-	<div class="column-5">
-		<span>5</span>
-	</div>
-</div>
-```
+| Class | Description |
+|---|---|
+| `columns-left` | Columns aligned to the left of the row. |
+| `columns-center` | Columns are centered along the row. |
+| `columns-right` | Columns are aligned toward to end of the row. |
+| `columns-between` | Columns are evenly distributed in the row; first column is on the start, last column on the end. |
+| `columns-around` | Columns are evenly distributed in the row with equal space around them. |
 
 Coming soon more details.
