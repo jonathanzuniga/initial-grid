@@ -78,3 +78,7 @@ Nos sirven para compensar el espacio vacío en el `row` que contiene una columna
 A veces hay momentos en los que es mejor trabajar con columnas sin márgenes, agrega la clase `columns-collapse` a cualquier `row` para remover los espacios entre las columnas.
 
 You can see the grid in action on demo page.
+
+## License
+
+MIT
